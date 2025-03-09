@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - India Roleplay Community (IRP)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Login to India Roleplay Community (IRP)</h1>
+    </header>
+
+    <section id="login">
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <label for="rank">Rank:</label>
+            <select id="rank" required>
+                <option value="">Select your rank</option>
+                <option value="Moderation Team">Moderation Team</option>
+                <option value="Administration Team">Administration Team</option>
+                <option value="HR">HR</option>
+                <option value="Directive Team">Directive Team</option>
+                <option value="Leadership Team">Leadership Team</option>
+                <option value="Foundership Team">Foundership Team</option>
+                <option value="Co-Founder">Co-Founder</option>
+                <option value="Founder">Founder</option>
+            </select>
+            <button type="submit">Login</button>
+        </form>
+        <div id="error-message"></div> <!-- Error message div -->
+    </section>
+
+    <footer>
+        <p>&copy; 2025 India Roleplay Community. All rights reserved.</p>
+    </footer>
+
+    <script src="login.js"></script>
+</body>
+</html>
