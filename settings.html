@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - India Roleplay Community (IRP)</title>
+    <link rel="stylesheet" href="settings.css">
+    <style>
+        /* General Styles for Settings Page */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f9fc; /* Light gray background */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+
+        header {
+            background: linear-gradient(to right, #4a90e2, #0056b3); /* Blue gradient background */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            animation: slideDown 0.5s ease; /* Slide down animation */
+        }
+
+        #logo {
+            width: 60px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            position: absolute; /* Position it in the header */
+            top: 15px; /* Adjust vertical position */
+            left: 20px; /* Adjust horizontal position */
+        }
+
+        h1 {
+            margin: 0; /* Remove default margin */
+            font-size: 32px; /* Adjust font size as needed */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px; /* Space between title and nav */
+        }
+
+        nav ul li {
+            margin: 0 20px; /* Increased margin for better spacing */
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 20px; /* Increased padding for better touch targets */
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s; /* Add transform transition */
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent hover effect */
+            transform: scale(1.05); /* Scale up on hover */
+        }
+
+        section {
+            padding: 25px; /* Increased padding for sections */
+            margin: 20px;
+            background: #ffffff; /* White background for sections */
+            border-radius: 10px; /* More rounded corners */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+        }
+        .under-development{
+            color: red;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #0056b3; /* Darker blue for footer */
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .logout-button {
+            background-color: #ff5252; /* Coral background for logout */
+            border: none;
+            color: white;
+            padding: 12px 20px; /* Increased padding for better touch targets */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; /* Add transform transition */
+            font-size: 18px; /* Increased font size */
+            margin-top: 25px; /* Space above the button */
+        }
+
+        .logout-button:hover {
+            background-color: #ff1744; /* Darker coral on hover */
+            transform: scale(1.05); /* Scale up on hover */
+        }
+
+        /* Styles for Privacy Policy and Other Settings */
+        h2 {
+            color: #4a90e2; /* Blue color for section headings */
+            margin-bottom: 20px; /* Space below headings */
+        }
+
+        h3 {
+            margin-top: 20px; /* Space above subheadings */
+            color: #0056b3; /* Darker blue for subheadings */
+        }
+
+        p {
+            line-height: 1.8; /* Improve readability */
+        }
+
+        ul {
+            margin: 15px 0; /* Space above and below lists */
+            padding-left: 25px; /* Indent lists */
+        }
+
+        button {
+            background-color: #00796b; /* Teal for buttons */
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; /* Add transform transition */
+        }
+
+        button:hover {
+            background-color: #005b50; /* Darker teal on hover */
+            transform: scale(1.05); /* Scale up on hover */
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: flex; /* Use flexbox to center the popup */
+            position: fixed; /* Stay in place */
+            z-index: 1001; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+            justify-content: center; /* Center the popup */
+            align-items: center; /* Center the popup */
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-button {
+            background-color: #ff5252; /* Coral background for close button */
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .close-button:hover {
+            background-color: #ff1744; /* Darker coral on hover */
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Additional styles for responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column; /* Stack header elements on smaller screens */
+                align-items: center; /* Center align items */
+            }
+
+            h1 {
+                margin-left: 0; /* Remove left margin on smaller screens */
+                text-align: center; /* Center align the title */
+            }
+
+            nav ul {
+                flex-direction: column; /* Stack navigation items vertically */
+            }
+
+            nav ul li {
+                margin: 5px 0; /* Adjust margin for vertical layout */
+            }
+
+            section {
+                margin: 10px; /* Adjust margin for sections */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="IRP Logo" id="logo">
+        <h1>Settings</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#privacy-policy">Privacy & Policy</a></li>
+                <li><a href="#other-settings">Other Settings <span class="under-development">[Under Development 🛠️]</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="privacy-policy">
+        <h2>Privacy & Policy</h2>
+        <p>Your privacy is important to us. We are committed to protecting your personal information and your right to privacy. This policy outlines how we collect, use, and safeguard your information.</p>
+        <h3>Information We Collect</h3>
+        <ul>
+            <li>Personal Information: Name, email address, etc. (In Future)</li>
+            <li>Usage Data: Information about how you use our services. (In Future)</li>
+        </ul>
+        <h3>How We Use Your Information</h3>
+        <p>We use your information to provide, maintain, and improve our services, as well as to communicate with you.</p>
+    </section>
+
+    <section id="other-settings">
+        <h2>Other Settings</h2>
+        <p>Here you can customize your experience. More options will be available soon.</p>
+        <button class="logout-button">Logout</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 India Roleplay Community. All rights reserved. Version 2.0</p>
+    </footer>
+
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <p>This feature is currently under development. Please check back later.🛠️</p>
+            <button class="close-button" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none'; // Hide the popup
+        }
+    </script>
+</body>
+</html>

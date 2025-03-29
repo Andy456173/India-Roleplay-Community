@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Roleplay Community (IRP)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="IRP Logo" id="logo">
+        <h1>Welcome to IRP!</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" aria-label="Go to Home">Home</a></li>
+                <li><a href="#about" aria-label="Learn more about us">About</a></li>
+                <li><a href="#history" aria-label="Read our history">History</a></li>
+                <li><a href="#rules" aria-label="View in-game rules">In-Game Rules</a></li>
+                <li><a href="#discord" aria-label="View Discord rules">In-Discord Rules</a></li>
+                <li><a href="settings.html" class="settings-button" aria-label="Go to Settings">Settings</a></li>
+                <li><a href="update-list.html" class="update-button" aria-label="View Update List">Updated List</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="utc-clock" class="clock-container">
+            <h2>Current UTC Time</h2>
+            <div class="clock-display">
+                <p id="clock" style="font-size: 48px; font-weight: bold; margin: 0;"></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Change Clock Color</h2>
+            <button class="color-button red" onclick="changeClockColor('#e74c3c')">Red</button>
+            <button class="color-button green" onclick="changeClockColor('#2ecc71')">Green</button>
+            <button class="color-button blue" onclick="changeClockColor('#3498db')">Blue</button>
+            <button class="color-button orange" onclick="changeClockColor('#e67e22')">Orange</button>
+            <button class="color-button purple" onclick="changeClockColor('#9b59b6')">Purple</button>
+        </section>
+
+        <section id="about" tabindex="0">
+            <h2>About Us</h2>
+            <p>The India Roleplay Community (ER:LC) is a Discord community server based on the ER:LC private server. Enjoy playing IRP!</p>
+        </section>
+
+        <section id="history" tabindex="0">
+            <h2>Our History</h2>
+            <p>The India Roleplay Community (ER:LC) was founded on July 18, 2024, to create a welcoming community for ER:LC roleplayers. Our founding team, Shubhra9143Q (Founder), 0003ASHIR (Former Co-Founder), and Andy (Co-Founder), have worked hard to create a safe and fun environment for all players. Now, we have over 100 members and we are trying to get to 500 members! #RoadTo500</p>
+        </section>
+
+        <section id="rules" tabindex="0">
+            <h2>In-Game Rules</h2>
+            <ul>
+                <li>‣ Stay in Character 🎭: Roleplay must be realistic and immersive at all times. Breaking character disrupts gameplay and may result in warnings or removal from sessions.</li>
+                <li>No Fail RP 🚫: Unrealistic actions, such as random killing (RDM), vehicle ramming, or ignoring injuries, are prohibited. Maintain proper roleplay standards to keep the experience fair for all.</li>
+                <li>‣ No Metagaming ❌: Do not use out-of-character (OOC) knowledge to influence in-game actions. Roleplay should be based only on in-character information to maintain immersion.</li>
+                <li>‣ Emergency Services Conduct 🚓🚒: Players in emergency roles must act professionally and realistically. Misuse of tools, vehicles, or roles will lead to immediate penalties or removal.</li>
+                <li>‣ Exploits & Hacking 🛠️: The use of exploits, glitches, or hacks is strictly forbidden and will result in a permanent ban without warnings. Play fair and respect the rules.</li>
+            </ul>
+        </section>
+
+        <section id="discord" tabindex="0">
+            <h2>In-Discord Rules</h2>
+            <ul>
+                <li>‣ Respect Everyone 🤝: Treat all members with respect and kindness. Harassment, bullying, or hate speech of any kind will result in strict action, including removal or bans.</li>
+                <li>‣ No NSFW Content ❌: This server is safe for all audiences. Posting explicit, inappropriate, or offensive content, including links, images, or videos, is strictly prohibited and will lead to immediate removal.</li>
+                <li>‣ No Spamming 🚫: Avoid sending repetitive messages or excessive self-promotion.</li>
+                <li>‣ Follow Channel Topics 📢: Use each channel only for its intended purpose. Off-topic discussions will be removed, and repeat offenders may face warnings or temporary restrictions.</li>
+                <li>‣ Bot Commands 🤖: Keep bot commands in their designated channels to prevent chat clutter. Misuse of bots may lead to command restrictions or penalties.</li>
+            </ul>
+        </section>
+
+        <section id="discord-link" tabindex="0">
+            <h2>Join Our Discord Server</h2>
+            <a href="https://discord.gg/JRs23ewn3G" target="_blank" class="discord-button">
+                <img src="discord-logo.png" alt="Discord Logo" class="discord-logo">Click here to join!
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 India Roleplay Community. All rights reserved.</p>
+        <p class="version">Version 2.1</p> <!-- Added version number -->
+    </footer>
+
+    <script>
+        // Function to display the current UTC time
+        function displayUTCTime() {
+            setInterval(() => {
+                const now = new Date();
+                const utcDate = now.toUTCString().split(' ')[0]; // Day
+                const utcTime = now.toUTCString().split(' ')[4]; // Time
+                const utcYear = now.getUTCFullYear(); // Year
+                const utcMonth = now.getUTCMonth() + 1; // Month (0-indexed)
+                const utcDay = now.getUTCDate(); // Day of the month
+                const formattedDate = `${utcDate}, ${utcDay}/${utcMonth}/${utcYear}`;
+                document.getElementById("clock").innerText = `${formattedDate} ${utcTime}`;
+            }, 1000);
+        }
+
+        // Function to change the color of the UTC clock
+        function changeClockColor(color) {
+            const clockDisplay = document.getElementById("clock");
+            clockDisplay.style.color = color; // Change the text color of the clock
+            localStorage.setItem('clockColor', color); // Store the color in localStorage
+        }
+
+        // Function to apply the saved clock color
+        function applySavedColor() {
+            const savedColor = localStorage.getItem('clockColor');
+            if (savedColor) {
+                document.getElementById("clock").style.color = savedColor; // Apply the saved color
+            }
+        }
+
+        // Call the function to display UTC time and apply saved color on page load
+        window.onload = function() {
+            displayUTCTime();
+            applySavedColor();
+        };
+    </script>
+</body>
+</html>
